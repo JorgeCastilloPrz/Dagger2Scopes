@@ -1,0 +1,35 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:1.1.3'
+  }
+}
+
+allprojects {
+  ext {
+    // Android config
+    androidCompileSdkVersion = 22
+    androidBuildToolsVersion = "22.0.0"
+    androidMinSdkVersion = 14
+    androidTargetSdkVersion = 22
+    androidApplicationId = 'com.github.jorgecastilloprz.dagger2scopes'
+    androidVersionCode = 1
+    androidVersionName = '1.0'
+
+    // Libraries
+    libButterknife = 'com.jakewharton:butterknife:6.1.0'
+    libDagger = 'com.google.dagger:dagger:2.0'
+    libDaggerCompiler = 'com.google.dagger:dagger-compiler:2.0'
+    libAppCompat = 'com.android.support:appcompat-v7:22.0.0'
+    libFab = 'com.melnykov:floatingactionbutton:1.2.0'
+    libRecyclerView = 'com.android.support:recyclerview-v7:22.0.0'
+    libCardView = 'com.android.support:cardview-v7:22.0.0'
+    libPicasso = 'com.squareup.picasso:picasso:2.5.2'
+  }
+
+  repositories {
+    jcenter()
+  }
+}
