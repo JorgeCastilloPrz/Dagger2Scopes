@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="activity_horizontal_margin">10dp</dimen>
+  <dimen name="activity_vertical_margin">10dp</dimen>
+  <dimen name="cardview_topbottom_margin">6dp</dimen>
+  <dimen name="cardview_corner_radius">8dp</dimen>
+</resources>

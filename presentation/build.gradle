@@ -1,10 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'checkstyle'
-apply plugin: 'war'
 
 dependencies {
-  providedCompile parent.ext.libDaggerCompiler
-  compile parent.ext.libDagger
   compile project(':domain')
 }
 

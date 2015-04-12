@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="primary">#37474F</color>
+  <color name="primary_dark">#263238</color>
+  <color name="toolbar_text_color">#D7CCC8</color>
+  <color name="fab_primary">#FF5722</color>
+  <color name="fab_primary_pressed">#CE451C</color>
+  <color name="fab_ripple">#FF906E</color>
+  <color name="disabled_gray">#CCC</color>
+  <color name="gray_backgrounds">#f0ecf0</color>
+  <color name="header_gray_background">#EEEEEE</color>
+  <color name="subheader_gray_button">#F5F5F5</color>
+</resources>

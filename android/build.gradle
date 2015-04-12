@@ -31,11 +31,12 @@ dependencies {
   compile parent.ext.libRecyclerView
   compile parent.ext.libCardView
   compile parent.ext.libButterknife
+  compile 'javax.annotation:jsr250-api:1.0'
   provided parent.ext.libDaggerCompiler
   compile parent.ext.libDagger
   compile parent.ext.libAppCompat
   compile parent.ext.libFab
-  compile parent.ext.libPicasso
+  compile parent.ext.libGlide
 }
 
 
