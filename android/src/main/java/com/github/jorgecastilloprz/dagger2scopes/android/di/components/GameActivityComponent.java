@@ -18,6 +18,7 @@ package com.github.jorgecastilloprz.dagger2scopes.android.di.components;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.ActivityModule;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.GameModule;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.scopes.ActivityScope;
+import com.github.jorgecastilloprz.dagger2scopes.android.ui.fragment.BaseFragment;
 import com.github.jorgecastilloprz.dagger2scopes.domain.interactors.LoadGames;
 import com.github.jorgecastilloprz.dagger2scopes.domain.repository.GameRepository;
 import com.github.jorgecastilloprz.dagger2scopes.presentation.GameListPresenter;
@@ -30,9 +31,11 @@ import dagger.Component;
     ActivityModule.class, GameModule.class
 }) public interface GameActivityComponent extends ActivityComponent {
 
-  GameListPresenter provideGamePresenter();
+  void inject(BaseFragment baseFragment);
 
-  LoadGames provideLoadGamesInteractor();
+  GameListPresenter gamePresenter();
 
-  GameRepository provideGameRepository();
+  LoadGames loadGames();
+
+  GameRepository gameRepository();
 }

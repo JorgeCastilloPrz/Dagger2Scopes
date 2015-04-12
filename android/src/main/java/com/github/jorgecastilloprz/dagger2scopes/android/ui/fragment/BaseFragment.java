@@ -19,17 +19,13 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import butterknife.ButterKnife;
+import com.github.jorgecastilloprz.dagger2scopes.android.di.HasComponent;
 import com.github.jorgecastilloprz.dagger2scopes.android.ui.activity.BaseActivity;
 
 /**
  * Created by jorge on 2/02/15.
  */
 public class BaseFragment extends Fragment {
-
-  @Override public void onActivityCreated(Bundle savedInstanceState) {
-    super.onActivityCreated(savedInstanceState);
-    injectDependencies();
-  }
 
   @Override public void onViewCreated(View view, Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
@@ -43,15 +39,16 @@ public class BaseFragment extends Fragment {
     ButterKnife.inject(this, view);
   }
 
-  /**
-   * Dagger injection using activity graph scope
-   */
-  private void injectDependencies() {
-    ((BaseActivity) getActivity()).inject(this);
-  }
-
   @Override public void onDestroyView() {
     super.onDestroyView();
     ButterKnife.reset(this);
+  }
+
+  /**
+   * Gets a component for dependency injection by its type.
+   */
+  @SuppressWarnings("unchecked")
+  protected <C> C getComponent(Class<C> componentType) {
+    return componentType.cast(((HasComponent<C>)getActivity()).getComponent());
   }
 }

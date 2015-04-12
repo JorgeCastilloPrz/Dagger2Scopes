@@ -22,25 +22,27 @@ import android.view.MenuItem;
 import butterknife.InjectView;
 import com.github.jorgecastilloprz.dagger2scopes.R;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.ActivityModule;
-import com.github.jorgecastilloprz.dagger2scopes.android.di.GameModule;
+import com.github.jorgecastilloprz.dagger2scopes.android.di.HasComponent;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.components.DaggerGameActivityComponent;
+import com.github.jorgecastilloprz.dagger2scopes.android.di.components.GameActivityComponent;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements HasComponent<GameActivityComponent> {
 
   @InjectView(R.id.toolbar) Toolbar toolbar;
+  private GameActivityComponent gameActivityComponent;
 
   @Override public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+    initActivityComponent();
     injectViews();
     setSupportActionBar(toolbar);
   }
 
-  @Override protected void initActivityComponent() {
-    this.activityComponent = DaggerGameActivityComponent.builder()
+  private void initActivityComponent() {
+    this.gameActivityComponent = DaggerGameActivityComponent.builder()
         .applicationComponent(getApplicationComponent())
         .activityModule(new ActivityModule(this))
-        .gameModule(new GameModule())
         .build();
   }
 
@@ -57,5 +59,9 @@ public class MainActivity extends BaseActivity {
     }
 
     return super.onOptionsItemSelected(item);
+  }
+
+  @Override public GameActivityComponent getComponent() {
+    return gameActivityComponent;
   }
 }

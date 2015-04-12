@@ -19,10 +19,8 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import butterknife.ButterKnife;
 import com.github.jorgecastilloprz.dagger2scopes.android.Dagger2ScopesApp;
-import com.github.jorgecastilloprz.dagger2scopes.android.di.components.ActivityComponent;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.components.ApplicationComponent;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.components.GameActivityComponent;
-import com.github.jorgecastilloprz.dagger2scopes.android.ui.fragment.BaseFragment;
 
 /**
  * BaseActivity will be extended by every activity in the app, and it hides
@@ -37,30 +35,16 @@ import com.github.jorgecastilloprz.dagger2scopes.android.ui.fragment.BaseFragmen
  */
 public abstract class BaseActivity extends ActionBarActivity {
 
-  protected ActivityComponent activityComponent;
-
   @Override public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    initInjection();
-  }
-
-  private void initInjection() {
     this.getApplicationComponent().inject(this);
-    this.initActivityComponent();
-    activityComponent.inject(this);
   }
 
   protected ApplicationComponent getApplicationComponent() {
     return ((Dagger2ScopesApp) getApplication()).getApplicationComponent();
   }
 
-  public void inject(BaseFragment baseFragment) {
-    activityComponent.inject(baseFragment);
-  }
-
   protected void injectViews() {
     ButterKnife.inject(this);
   }
-
-  protected abstract void initActivityComponent();
 }

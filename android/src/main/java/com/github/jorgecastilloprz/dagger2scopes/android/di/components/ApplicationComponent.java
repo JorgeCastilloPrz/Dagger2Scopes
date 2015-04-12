@@ -28,12 +28,12 @@ import javax.inject.Singleton;
  */
 @Singleton // Constraints this component to one-per-application or unscoped bindings.
 @Component(modules = ApplicationModule.class) public interface ApplicationComponent {
-
   void inject(BaseActivity baseActivity);
 
-  Context provideApplicationContext();
+  //Exposed to sub-graphs.
+  Context context();
 
-  InteractorExecutor provideThreadExecutor();
+  InteractorExecutor threadExecutor();
 
-  MainThread providePostExecutionThread();
+  MainThread mainThread();
 }

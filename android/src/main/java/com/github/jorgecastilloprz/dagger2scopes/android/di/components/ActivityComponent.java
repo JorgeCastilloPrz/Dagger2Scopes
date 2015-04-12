@@ -29,11 +29,8 @@ import dagger.Component;
 @ActivityScope @Component(dependencies = ApplicationComponent.class, modules = ActivityModule.class)
 public interface ActivityComponent {
 
-  void inject(BaseActivity baseActivity);
+  //Exposed to sub-graphs.
+  Activity activityContext();
 
-  void inject(BaseFragment baseFragment);
-
-  Activity getActivityContext();
-
-  Navigator provideNavigator();
+  Navigator navigator();
 }
