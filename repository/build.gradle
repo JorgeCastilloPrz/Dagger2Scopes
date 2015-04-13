@@ -1,0 +1,18 @@
+apply plugin: 'java'
+apply plugin: 'checkstyle'
+apply plugin: 'war'
+
+dependencies {
+  providedCompile parent.ext.libDaggerCompiler
+  compile parent.ext.libDagger
+  compile project(':domain')
+}
+
+task checkstyle(type: Checkstyle) {
+  configFile file('../config/checkstyle/checkstyle.xml')
+  source 'src'
+  include '**/*.java'
+  exclude '**/gen/**'
+
+  classpath = files()
+}

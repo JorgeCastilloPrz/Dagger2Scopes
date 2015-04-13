@@ -27,10 +27,9 @@ import com.github.jorgecastilloprz.dagger2scopes.presentation.GameListPresenter;
 import dagger.Component;
 
 /**
- * Every game related dependency linked to the activity context will be exposed by this component.
+ * Game list related dependencies linked to the activity context will be exposed by this component.
  * This component extends {@link AbstractActivityComponent}, so it is capable of providing activity
- * context
- * and navigator too. (They dont need to get exposed here again as they are in the parent).
+ * context and navigator too. (They dont need to get exposed here again as they are in the parent).
  *
  * @author Jorge Castillo Pérez
  */

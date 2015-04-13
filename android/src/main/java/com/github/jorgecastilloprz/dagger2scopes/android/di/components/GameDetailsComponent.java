@@ -20,15 +20,16 @@ import com.github.jorgecastilloprz.dagger2scopes.android.di.GameDetailsModule;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.scopes.ActivityScope;
 import com.github.jorgecastilloprz.dagger2scopes.android.ui.activity.GameDetailsActivity;
 import com.github.jorgecastilloprz.dagger2scopes.android.ui.animator.ToolbarAnimator;
+import com.github.jorgecastilloprz.dagger2scopes.android.ui.fragment.GameDetailsFragment;
 import com.github.jorgecastilloprz.dagger2scopes.domain.interactors.ChangeBookmarkGameStatus;
 import com.github.jorgecastilloprz.dagger2scopes.presentation.GameDetailsPresenter;
 import dagger.Component;
 
 /**
- * Every game related dependency linked to the activity context will be exposed by this component.
- * This component extends {@link AbstractActivityComponent}, so it is capable of providing activity
- * context
- * and navigator too. (They dont need to get exposed here again as they are in the parent).
+ * Game details related dependencies linked to the activity context will be exposed by this
+ * component. This component extends {@link AbstractActivityComponent}, so it is capable of
+ * providing activity context and navigator too. (They dont need to get exposed here again as they
+ * are in the parent).
  *
  * @author Jorge Castillo Pérez
  */
@@ -38,9 +39,9 @@ import dagger.Component;
 
   void inject(GameDetailsActivity detailsActivity);
 
+  void inject(GameDetailsFragment detailsFragment);
+
   GameDetailsPresenter getPresenter();
 
   ChangeBookmarkGameStatus getBookmarkInteractor();
-
-  ToolbarAnimator getToolbarAnimator();
 }

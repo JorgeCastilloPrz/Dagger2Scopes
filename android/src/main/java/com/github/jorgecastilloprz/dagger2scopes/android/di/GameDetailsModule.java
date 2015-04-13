@@ -10,10 +10,6 @@ import com.github.jorgecastilloprz.dagger2scopes.android.ui.animator.ToolbarAnim
 import com.github.jorgecastilloprz.dagger2scopes.android.ui.animator.ToolbarAnimatorImpl;
 import com.github.jorgecastilloprz.dagger2scopes.domain.interactors.ChangeBookmarkGameStatus;
 import com.github.jorgecastilloprz.dagger2scopes.domain.interactors.ChangeBookmarkGameStatusImpl;
-import com.github.jorgecastilloprz.dagger2scopes.domain.model.GameCatalog;
-import com.github.jorgecastilloprz.dagger2scopes.domain.model.LucasArtCatalog;
-import com.github.jorgecastilloprz.dagger2scopes.domain.repository.GameRepository;
-import com.github.jorgecastilloprz.dagger2scopes.domain.repository.GameRepositoryImpl;
 import com.github.jorgecastilloprz.dagger2scopes.presentation.GameDetailsPresenter;
 import com.github.jorgecastilloprz.dagger2scopes.presentation.GameDetailsPresenterImpl;
 import dagger.Module;

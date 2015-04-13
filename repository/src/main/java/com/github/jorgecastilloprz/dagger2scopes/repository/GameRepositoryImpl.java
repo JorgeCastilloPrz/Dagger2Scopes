@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.jorgecastilloprz.dagger2scopes.domain.repository;
+package com.github.jorgecastilloprz.dagger2scopes.repository;
 
 import com.github.jorgecastilloprz.dagger2scopes.domain.model.Game;
 import com.github.jorgecastilloprz.dagger2scopes.domain.model.GameCatalog;
+import com.github.jorgecastilloprz.dagger2scopes.domain.repository.GameRepository;
 import java.util.List;
 import javax.inject.Inject;
 
