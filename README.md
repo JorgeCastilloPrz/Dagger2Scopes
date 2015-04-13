@@ -2,7 +2,7 @@
 
 ![Dagger2Scopes image](/art/dagger2scopes.png?raw=true)
 
-Dagger2Scopes is a sample Android app to implement usual Dagger 1 scoping logic with the brand new Dagger 2 Google lib. In this sample you will be able to find
+Dagger2Scopes is a sample Android app to implement usual Dagger 1 multiple scoping logic with the brand new Dagger 2 Google lib. In this sample you will be able to find
 the following features:
 
 * Multiple scopes with Dagger 2 (Components and subcomponents).
