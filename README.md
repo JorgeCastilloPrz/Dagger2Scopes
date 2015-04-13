@@ -10,9 +10,8 @@ the following features:
 DI structure
 ------------
 Dagger 2 erases the dagger 1 graph concept by introducing the brand new components. The components available in this sample app are the following:
-* `ApplicationComponent`: Like in the Google Dagger 2 samples, this component will be used to expose application context and generic dependencies
-to components depending on this one or to child components. This component will be used to inject `Dagger2ScopesApp` and activities/fragments by
-component composition.
+* `ApplicationComponent`: This component will be used to expose application context and generic dependencies to components depending on this one or
+to child components. This component will be used to inject `Dagger2ScopesApp` and activities/fragments by component composition.
 * `AbstractActivityComponent`: This one is used as an abstract activity scoped component and exposes activity context and common dependencies
 linked to activity lifecycle, like `Navigator` or `ToolbarAnimator`.
 * `GameListActivityComponent`: Extends `AbstractActivityComponent` to provide game list related dependencies.
