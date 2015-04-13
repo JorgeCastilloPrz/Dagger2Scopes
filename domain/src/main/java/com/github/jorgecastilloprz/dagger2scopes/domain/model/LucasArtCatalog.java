@@ -18,6 +18,7 @@ package com.github.jorgecastilloprz.dagger2scopes.domain.model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import javax.inject.Inject;
 
 /**
  * Mock game catalog.
@@ -28,7 +29,7 @@ public class LucasArtCatalog implements GameCatalog {
 
   private List<Game> games;
 
-  public LucasArtCatalog() {
+  @Inject LucasArtCatalog() {
     initCatalog();
   }
 

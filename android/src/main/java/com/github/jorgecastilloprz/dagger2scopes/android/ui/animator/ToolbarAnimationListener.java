@@ -13,27 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.jorgecastilloprz.dagger2scopes.domain.repository;
-
-import com.github.jorgecastilloprz.dagger2scopes.domain.model.Game;
-import com.github.jorgecastilloprz.dagger2scopes.domain.model.GameCatalog;
-import java.util.List;
-import javax.inject.Inject;
+package com.github.jorgecastilloprz.dagger2scopes.android.ui.animator;
 
 /**
- * Mock catalog details
+ * Listener to dispatch toolbar animation finish events
  *
  * @author Jorge Castillo Pérez
  */
-public class GameRepositoryImpl implements GameRepository {
+public interface ToolbarAnimationListener {
 
-  private GameCatalog catalog;
+  void onToolbarTotallyDisplayed();
 
-  @Inject GameRepositoryImpl(GameCatalog catalog) {
-    this.catalog = catalog;
-  }
-
-  @Override public List<Game> getGames() {
-    return catalog.getGames();
-  }
+  void onToolbarTotallyHidden();
 }

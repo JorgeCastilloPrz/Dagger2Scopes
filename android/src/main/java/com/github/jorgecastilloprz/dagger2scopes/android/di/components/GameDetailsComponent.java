@@ -16,13 +16,12 @@
 package com.github.jorgecastilloprz.dagger2scopes.android.di.components;
 
 import com.github.jorgecastilloprz.dagger2scopes.android.di.ActivityModule;
-import com.github.jorgecastilloprz.dagger2scopes.android.di.GameModule;
+import com.github.jorgecastilloprz.dagger2scopes.android.di.GameDetailsModule;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.scopes.ActivityScope;
-import com.github.jorgecastilloprz.dagger2scopes.android.ui.activity.MainActivity;
-import com.github.jorgecastilloprz.dagger2scopes.android.ui.fragment.LucasGameListFragment;
-import com.github.jorgecastilloprz.dagger2scopes.domain.interactors.LoadGames;
-import com.github.jorgecastilloprz.dagger2scopes.domain.repository.GameRepository;
-import com.github.jorgecastilloprz.dagger2scopes.presentation.GameListPresenter;
+import com.github.jorgecastilloprz.dagger2scopes.android.ui.activity.GameDetailsActivity;
+import com.github.jorgecastilloprz.dagger2scopes.android.ui.animator.ToolbarAnimator;
+import com.github.jorgecastilloprz.dagger2scopes.domain.interactors.ChangeBookmarkGameStatus;
+import com.github.jorgecastilloprz.dagger2scopes.presentation.GameDetailsPresenter;
 import dagger.Component;
 
 /**
@@ -34,17 +33,14 @@ import dagger.Component;
  * @author Jorge Castillo Pérez
  */
 @ActivityScope @Component(dependencies = ApplicationComponent.class, modules = {
-    ActivityModule.class, GameModule.class
-}) public interface GameActivityComponent extends AbstractActivityComponent {
+    ActivityModule.class, GameDetailsModule.class
+}) public interface GameDetailsComponent extends AbstractActivityComponent {
 
-  //Main activity and game fragments can get injected through this component.
-  void inject(MainActivity mainActivity);
+  void inject(GameDetailsActivity detailsActivity);
 
-  void inject(LucasGameListFragment lucasGameListFragment);
+  GameDetailsPresenter getPresenter();
 
-  GameListPresenter gamePresenter();
+  ChangeBookmarkGameStatus getBookmarkInteractor();
 
-  LoadGames loadGames();
-
-  GameRepository gameRepository();
+  ToolbarAnimator getToolbarAnimator();
 }

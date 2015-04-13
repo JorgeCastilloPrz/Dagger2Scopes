@@ -23,22 +23,22 @@ import butterknife.InjectView;
 import com.github.jorgecastilloprz.dagger2scopes.R;
 import com.github.jorgecastilloprz.dagger2scopes.android.Dagger2ScopesApp;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.ActivityModule;
-import com.github.jorgecastilloprz.dagger2scopes.android.di.components.GameActivityComponent;
-import com.github.jorgecastilloprz.dagger2scopes.android.di.components.DaggerGameActivityComponent;
+import com.github.jorgecastilloprz.dagger2scopes.android.di.components.DaggerGameListActivityComponent;
+import com.github.jorgecastilloprz.dagger2scopes.android.di.components.GameListActivityComponent;
 
 public class MainActivity extends BaseActivity {
 
   @InjectView(R.id.toolbar) Toolbar toolbar;
-  private GameActivityComponent gameActivityComponent;
+  private GameListActivityComponent gameListComponent;
 
-  public GameActivityComponent component() {
-    if (gameActivityComponent == null) {
-      gameActivityComponent = DaggerGameActivityComponent.builder()
+  public GameListActivityComponent component() {
+    if (gameListComponent == null) {
+      gameListComponent = DaggerGameListActivityComponent.builder()
           .applicationComponent(((Dagger2ScopesApp) getApplication()).component())
           .activityModule(new ActivityModule(this))
           .build();
     }
-    return gameActivityComponent;
+    return gameListComponent;
   }
 
   @Override public void onCreate(Bundle savedInstanceState) {

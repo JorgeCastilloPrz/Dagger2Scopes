@@ -6,4 +6,11 @@
   <string name="load_games_error">There was a problem while trying to load the games!</string>
   <string name="games_stored">Games were stored into the database.</string>
   <string name="store_games_error">There was a problem while trying to store games in persistence.</string>
+  <string name="game_fav">Game marked as favourite!</string>
+  <string name="game_unfav">This game is not your favourite anymore!</string>
+  <string name="bookmark_error">There was a problem while trying to bookmark the game.</string>
+  <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
 </resources>

@@ -8,6 +8,8 @@ package com.github.jorgecastilloprz.dagger2scopes.android.di;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.scopes.ActivityScope;
 import com.github.jorgecastilloprz.dagger2scopes.domain.interactors.LoadGames;
 import com.github.jorgecastilloprz.dagger2scopes.domain.interactors.LoadGamesInteractor;
+import com.github.jorgecastilloprz.dagger2scopes.domain.model.GameCatalog;
+import com.github.jorgecastilloprz.dagger2scopes.domain.model.LucasArtCatalog;
 import com.github.jorgecastilloprz.dagger2scopes.domain.repository.GameRepository;
 import com.github.jorgecastilloprz.dagger2scopes.domain.repository.GameRepositoryImpl;
 import com.github.jorgecastilloprz.dagger2scopes.presentation.GameListPresenter;
@@ -18,7 +20,7 @@ import dagger.Provides;
 /**
  * Dagger module that provides user related collaborators.
  */
-@Module public class GameModule {
+@Module public class GameListModule {
 
   @Provides @ActivityScope GameListPresenter provideGamePresenter(GameListPresenterImpl presenter) {
     return presenter;
@@ -30,5 +32,9 @@ import dagger.Provides;
 
   @Provides @ActivityScope GameRepository provideGameRepository(GameRepositoryImpl repository) {
     return repository;
+  }
+
+  @Provides @ActivityScope GameCatalog provideGameCatalog(LucasArtCatalog catalog) {
+    return catalog;
   }
 }

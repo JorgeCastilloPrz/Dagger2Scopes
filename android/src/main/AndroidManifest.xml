@@ -24,6 +24,8 @@
       </intent-filter>
     </activity>
 
+    <activity android:name=".android.ui.activity.GameDetailsActivity"/>
+
   </application>
 
 </manifest>

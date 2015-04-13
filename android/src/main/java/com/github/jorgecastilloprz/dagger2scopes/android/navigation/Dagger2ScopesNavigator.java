@@ -16,8 +16,10 @@
 package com.github.jorgecastilloprz.dagger2scopes.android.navigation;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import com.github.jorgecastilloprz.dagger2scopes.android.ui.activity.GameDetailsActivity;
 import com.github.jorgecastilloprz.dagger2scopes.domain.model.Game;
 import com.github.jorgecastilloprz.dagger2scopes.domain.navigation.Navigator;
 import javax.inject.Inject;
@@ -38,11 +40,7 @@ public class Dagger2ScopesNavigator implements Navigator {
   }
 
   @Override public void displayGameDetails(Game game) {
-    //AppListFragment appListFragment = AppListFragment.newInstance(apps);
-    //FragmentManager fragmentManager = getFragmentManager();
-    //FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-    //fragmentTransaction.add(R.id.mainActivityRoot, appListFragment);
-    //fragmentTransaction.addToBackStack(appListFragment.getClass().getSimpleName());
-    //fragmentTransaction.commit();
+    Intent displayGameDetailsIntent = GameDetailsActivity.getLaunchIntent(activity, game);
+    activity.startActivity(displayGameDetailsIntent);
   }
 }

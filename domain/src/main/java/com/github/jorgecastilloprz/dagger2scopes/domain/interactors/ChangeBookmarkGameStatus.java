@@ -13,27 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.jorgecastilloprz.dagger2scopes.domain.repository;
-
-import com.github.jorgecastilloprz.dagger2scopes.domain.model.Game;
-import com.github.jorgecastilloprz.dagger2scopes.domain.model.GameCatalog;
-import java.util.List;
-import javax.inject.Inject;
+package com.github.jorgecastilloprz.dagger2scopes.domain.interactors;
 
 /**
- * Mock catalog details
- *
  * @author Jorge Castillo Pérez
  */
-public class GameRepositoryImpl implements GameRepository {
+public interface ChangeBookmarkGameStatus {
+  void execute(ChangeBookmarkCallback callback);
 
-  private GameCatalog catalog;
+  interface ChangeBookmarkCallback {
+    void onBookMarkStatusChanged();
 
-  @Inject GameRepositoryImpl(GameCatalog catalog) {
-    this.catalog = catalog;
-  }
-
-  @Override public List<Game> getGames() {
-    return catalog.getGames();
+    void onBookmarkError();
   }
 }
