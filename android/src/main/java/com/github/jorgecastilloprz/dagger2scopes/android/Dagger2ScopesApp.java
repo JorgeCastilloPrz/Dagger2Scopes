@@ -21,6 +21,9 @@ import com.github.jorgecastilloprz.dagger2scopes.android.di.components.Applicati
 import com.github.jorgecastilloprz.dagger2scopes.android.di.components.DaggerApplicationComponent;
 
 /**
+ * {@link ApplicationComponent} could be used to provide dependencies needed by the whole app
+ * execution. Application context linked dependencies would be exposed by it too.
+ *
  * @author Jorge Castillo Pérez
  */
 public class Dagger2ScopesApp extends Application {
@@ -29,15 +32,12 @@ public class Dagger2ScopesApp extends Application {
 
   @Override public void onCreate() {
     super.onCreate();
-    initApplicationInjection();
+    applicationComponent = DaggerApplicationComponent.builder()
+        .applicationModule(new ApplicationModule(this))
+        .build();
   }
 
-  private void initApplicationInjection() {
-    applicationComponent =
-        DaggerApplicationComponent.builder().applicationModule(new ApplicationModule(this)).build();
-  }
-
-  public ApplicationComponent getApplicationComponent() {
+  public ApplicationComponent component() {
     return applicationComponent;
   }
 }

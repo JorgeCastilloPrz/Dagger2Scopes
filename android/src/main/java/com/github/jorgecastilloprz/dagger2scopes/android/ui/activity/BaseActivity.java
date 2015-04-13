@@ -15,34 +15,16 @@
  */
 package com.github.jorgecastilloprz.dagger2scopes.android.ui.activity;
 
-import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import butterknife.ButterKnife;
-import com.github.jorgecastilloprz.dagger2scopes.android.Dagger2ScopesApp;
-import com.github.jorgecastilloprz.dagger2scopes.android.di.components.ApplicationComponent;
-import com.github.jorgecastilloprz.dagger2scopes.android.di.components.GameActivityComponent;
 
 /**
  * BaseActivity will be extended by every activity in the app, and it hides
- * common logic for concrete activities, like initial dependency and view injections
- * <p/>
- * ActivityComponent could have different subcomponents like {@link GameActivityComponent} which
- * would expose different providing dependencies to the app. Everyone of them would extend
- * ActivityComponent and because of that, common dependencies like activity context would be
- * provided too.
+ * common logic for concrete activities, like initial view injections
  *
  * Created by jorge on 10/01/15.
  */
 public abstract class BaseActivity extends ActionBarActivity {
-
-  @Override public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    this.getApplicationComponent().inject(this);
-  }
-
-  protected ApplicationComponent getApplicationComponent() {
-    return ((Dagger2ScopesApp) getApplication()).getApplicationComponent();
-  }
 
   protected void injectViews() {
     ButterKnife.inject(this);

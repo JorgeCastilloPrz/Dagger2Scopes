@@ -15,7 +15,7 @@
  */
 package com.github.jorgecastilloprz.dagger2scopes.android.navigation;
 
-import android.content.Context;
+import android.app.Activity;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import com.github.jorgecastilloprz.dagger2scopes.domain.model.Game;
@@ -27,14 +27,14 @@ import javax.inject.Inject;
  */
 public class Dagger2ScopesNavigator implements Navigator {
 
-  private Context context;
+  private Activity activity;
 
-  @Inject Dagger2ScopesNavigator(Context context) {
-    this.context = context;
+  @Inject Dagger2ScopesNavigator(Activity activity) {
+    this.activity = activity;
   }
 
   private FragmentManager getFragmentManager() {
-    return ((FragmentActivity) context).getSupportFragmentManager();
+    return ((FragmentActivity) activity).getSupportFragmentManager();
   }
 
   @Override public void displayGameDetails(Game game) {

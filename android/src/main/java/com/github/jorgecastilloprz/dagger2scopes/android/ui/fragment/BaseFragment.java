@@ -19,10 +19,11 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import butterknife.ButterKnife;
-import com.github.jorgecastilloprz.dagger2scopes.android.di.HasComponent;
-import com.github.jorgecastilloprz.dagger2scopes.android.ui.activity.BaseActivity;
 
 /**
+ * Common logic fragment for all the fragments in the app. View injection is done here. Dependency
+ * injection will not be done here as it is handled by activities.
+ *
  * Created by jorge on 2/02/15.
  */
 public class BaseFragment extends Fragment {
@@ -42,13 +43,5 @@ public class BaseFragment extends Fragment {
   @Override public void onDestroyView() {
     super.onDestroyView();
     ButterKnife.reset(this);
-  }
-
-  /**
-   * Gets a component for dependency injection by its type.
-   */
-  @SuppressWarnings("unchecked")
-  protected <C> C getComponent(Class<C> componentType) {
-    return componentType.cast(((HasComponent<C>)getActivity()).getComponent());
   }
 }

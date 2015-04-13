@@ -21,29 +21,31 @@ import android.view.Menu;
 import android.view.MenuItem;
 import butterknife.InjectView;
 import com.github.jorgecastilloprz.dagger2scopes.R;
+import com.github.jorgecastilloprz.dagger2scopes.android.Dagger2ScopesApp;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.ActivityModule;
-import com.github.jorgecastilloprz.dagger2scopes.android.di.HasComponent;
-import com.github.jorgecastilloprz.dagger2scopes.android.di.components.DaggerGameActivityComponent;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.components.GameActivityComponent;
+import com.github.jorgecastilloprz.dagger2scopes.android.di.components.DaggerGameActivityComponent;
 
-public class MainActivity extends BaseActivity implements HasComponent<GameActivityComponent> {
+public class MainActivity extends BaseActivity {
 
   @InjectView(R.id.toolbar) Toolbar toolbar;
   private GameActivityComponent gameActivityComponent;
 
+  public GameActivityComponent component() {
+    if (gameActivityComponent == null) {
+      gameActivityComponent = DaggerGameActivityComponent.builder()
+          .applicationComponent(((Dagger2ScopesApp) getApplication()).component())
+          .activityModule(new ActivityModule(this))
+          .build();
+    }
+    return gameActivityComponent;
+  }
+
   @Override public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    initActivityComponent();
     injectViews();
     setSupportActionBar(toolbar);
-  }
-
-  private void initActivityComponent() {
-    this.gameActivityComponent = DaggerGameActivityComponent.builder()
-        .applicationComponent(getApplicationComponent())
-        .activityModule(new ActivityModule(this))
-        .build();
   }
 
   @Override public boolean onCreateOptionsMenu(Menu menu) {
@@ -59,9 +61,5 @@ public class MainActivity extends BaseActivity implements HasComponent<GameActiv
     }
 
     return super.onOptionsItemSelected(item);
-  }
-
-  @Override public GameActivityComponent getComponent() {
-    return gameActivityComponent;
   }
 }

@@ -15,23 +15,30 @@
  */
 package com.github.jorgecastilloprz.dagger2scopes.android.di.components;
 
-import android.content.Context;
+import android.app.Application;
+import com.github.jorgecastilloprz.dagger2scopes.android.Dagger2ScopesApp;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.ApplicationModule;
-import com.github.jorgecastilloprz.dagger2scopes.android.ui.activity.BaseActivity;
 import com.github.jorgecastilloprz.dagger2scopes.domain.executor.InteractorExecutor;
 import com.github.jorgecastilloprz.dagger2scopes.domain.executor.MainThread;
 import dagger.Component;
 import javax.inject.Singleton;
 
 /**
+ * ApplicationComponent is the top level component for this architecture. It provides generic
+ * dependencies like {@link InteractorExecutor} or {@link MainThread} and exposes them to
+ * subcomponents and to external dependant classes.
+ *
+ * Scope {@link Singleton} is used to limit dependency instances across whole execution.
+ *
  * @author Jorge Castillo Pérez
  */
-@Singleton // Constraints this component to one-per-application or unscoped bindings.
-@Component(modules = ApplicationModule.class) public interface ApplicationComponent {
-  void inject(BaseActivity baseActivity);
+@Singleton @Component(modules = ApplicationModule.class) public interface ApplicationComponent {
 
-  //Exposed to sub-graphs.
-  Context context();
+  //field injections for the dependencies of the Dagger2ScopesApp
+  void inject(Dagger2ScopesApp app);
+
+  //Exported to child components
+  Application application();
 
   InteractorExecutor threadExecutor();
 

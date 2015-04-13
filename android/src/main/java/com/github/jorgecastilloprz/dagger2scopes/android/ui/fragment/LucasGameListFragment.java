@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 import butterknife.InjectView;
 import com.github.jorgecastilloprz.dagger2scopes.R;
-import com.github.jorgecastilloprz.dagger2scopes.android.di.components.GameActivityComponent;
+import com.github.jorgecastilloprz.dagger2scopes.android.ui.activity.MainActivity;
 import com.github.jorgecastilloprz.dagger2scopes.android.ui.adapters.GameListAdapter;
 import com.github.jorgecastilloprz.dagger2scopes.domain.model.Game;
 import com.github.jorgecastilloprz.dagger2scopes.domain.model.LucasArtGame;
@@ -37,14 +37,10 @@ public class LucasGameListFragment extends BaseFragment
     return inflater.inflate(R.layout.fragment_gamelist, container, false);
   }
 
-  @Override public void onViewCreated(View view, Bundle savedInstanceState) {
-    super.onViewCreated(view, savedInstanceState);
-    initGameList();
-  }
-
   @Override public void onActivityCreated(Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
-    this.getComponent(GameActivityComponent.class).inject(this);
+    ((MainActivity) getActivity()).component().inject(this);
+    initGameList();
     presenter.setView(this);
     presenter.initialize();
   }

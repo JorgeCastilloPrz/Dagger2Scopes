@@ -15,8 +15,7 @@
  */
 package com.github.jorgecastilloprz.dagger2scopes.android.di;
 
-import android.content.Context;
-import com.github.jorgecastilloprz.dagger2scopes.android.Dagger2ScopesApp;
+import android.app.Application;
 import com.github.jorgecastilloprz.dagger2scopes.android.domain.MainThreadImpl;
 import com.github.jorgecastilloprz.dagger2scopes.domain.executor.InteractorExecutor;
 import com.github.jorgecastilloprz.dagger2scopes.domain.executor.MainThread;
@@ -26,18 +25,18 @@ import dagger.Provides;
 import javax.inject.Singleton;
 
 /**
- * Dagger module used to inject application context generic dependencies
+ * Dagger module used to inject application context or generic dependencies.
  *
  * @author Jorge Castillo Pérez
  */
 @Module public class ApplicationModule {
-  private final Dagger2ScopesApp application;
+  private final Application application;
 
-  public ApplicationModule(Dagger2ScopesApp application) {
+  public ApplicationModule(Application application) {
     this.application = application;
   }
 
-  @Provides @Singleton Context provideApplicationContext() {
+  @Provides @Singleton Application provideApplicationContext() {
     return this.application;
   }
 
