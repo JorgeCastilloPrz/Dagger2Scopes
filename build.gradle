@@ -10,10 +10,10 @@ buildscript {
 allprojects {
   ext {
     // Android config
-    androidCompileSdkVersion = 22
-    androidBuildToolsVersion = "22.0.0"
+    androidCompileSdkVersion = 21
+    androidBuildToolsVersion = "21.0.2"
     androidMinSdkVersion = 14
-    androidTargetSdkVersion = 22
+    androidTargetSdkVersion = 21
     androidApplicationId = 'com.github.jorgecastilloprz.dagger2scopes'
     androidVersionCode = 1
     androidVersionName = '1.0'
@@ -23,10 +23,10 @@ allprojects {
     libDagger = 'com.google.dagger:dagger:2.0'
     libDaggerCompiler = 'com.google.dagger:dagger-compiler:2.0'
     libAnnotations = 'org.glassfish:javax.annotation:10.0-b28'
-    libAppCompat = 'com.android.support:appcompat-v7:22.0.0'
+    libAppCompat = 'com.android.support:appcompat-v7:21.0.+'
     libFab = 'com.melnykov:floatingactionbutton:1.2.0'
-    libRecyclerView = 'com.android.support:recyclerview-v7:22.0.0'
-    libCardView = 'com.android.support:cardview-v7:22.0.0'
+    libRecyclerView = 'com.android.support:recyclerview-v7:21.0.0'
+    libCardView = 'com.android.support:cardview-v7:21.0.0'
     libGlide = 'com.github.bumptech.glide:glide:3.5.2'
   }
 
