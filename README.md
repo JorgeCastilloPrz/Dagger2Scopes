@@ -1,4 +1,4 @@
-Dagger2Scopes
+Dagger2Scopes [![Build Status](https://travis-ci.org/JorgeCastilloPrz/Dagger2Scopes.svg?branch=master)](https://travis-ci.org/JorgeCastilloPrz/Dagger2Scopes)
 =============
 Dagger2Scopes is a sample Android app to implement usual Dagger 1 scoping logic with the brand new Dagger 2 Google lib. In this sample you will be able to find
 the following features:
@@ -6,6 +6,19 @@ the following features:
 * Multiple scopes with Dagger 2 (Including Application and Activity scopes to provide both contexts).
 * An approach to Clean Architecture.
 * An approach to MVP pattern.
+
+DI structure
+------------
+Dagger 2 erases the dagger 1 graph concept by introducing the brand new components. The components available in this sample app are the following:
+* `ApplicationComponent`: Like in the Google Dagger 2 samples, this component will be used to expose application context and generic dependencies
+to components depending on this one or to child components. This component will be used to inject `Dagger2ScopesApp` and activities/fragments by
+component composition.
+* `AbstractActivityComponent`: This one is used as an abstract activity scoped component and exposes activity context and common dependencies
+linked to activity lifecycle, like `Navigator` or `ToolbarAnimator`.
+* `GameListActivityComponent`: Extends `AbstractActivityComponent` to provide game list related dependencies.
+* `GameDetailsActivityComponent`: Extends `AbstractActivityComponent` to provide game details related dependencies.
+
+All the activity scoped components are sharing the custom `@ActivityScope`.
 
 Attributions
 ------------

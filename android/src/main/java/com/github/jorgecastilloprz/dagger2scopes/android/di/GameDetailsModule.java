@@ -6,8 +6,6 @@
 package com.github.jorgecastilloprz.dagger2scopes.android.di;
 
 import com.github.jorgecastilloprz.dagger2scopes.android.di.scopes.ActivityScope;
-import com.github.jorgecastilloprz.dagger2scopes.android.ui.animator.ToolbarAnimator;
-import com.github.jorgecastilloprz.dagger2scopes.android.ui.animator.ToolbarAnimatorImpl;
 import com.github.jorgecastilloprz.dagger2scopes.domain.interactors.ChangeBookmarkGameStatus;
 import com.github.jorgecastilloprz.dagger2scopes.domain.interactors.ChangeBookmarkGameStatusImpl;
 import com.github.jorgecastilloprz.dagger2scopes.presentation.GameDetailsPresenter;
@@ -28,9 +26,5 @@ import dagger.Provides;
   @Provides @ActivityScope ChangeBookmarkGameStatus provideChangeBookmarkStatusInteractor(
       ChangeBookmarkGameStatusImpl interactor) {
     return interactor;
-  }
-
-  @Provides @ActivityScope ToolbarAnimator provideToolbarAnimator(ToolbarAnimatorImpl animator) {
-    return animator;
   }
 }

@@ -11,9 +11,9 @@ import com.github.jorgecastilloprz.dagger2scopes.domain.interactors.LoadGamesInt
 import com.github.jorgecastilloprz.dagger2scopes.domain.model.GameCatalog;
 import com.github.jorgecastilloprz.dagger2scopes.domain.model.LucasArtCatalog;
 import com.github.jorgecastilloprz.dagger2scopes.domain.repository.GameRepository;
-import com.github.jorgecastilloprz.dagger2scopes.domain.repository.GameRepositoryImpl;
 import com.github.jorgecastilloprz.dagger2scopes.presentation.GameListPresenter;
 import com.github.jorgecastilloprz.dagger2scopes.presentation.GameListPresenterImpl;
+import com.github.jorgecastilloprz.dagger2scopes.repository.GameRepositoryImpl;
 import dagger.Module;
 import dagger.Provides;
 

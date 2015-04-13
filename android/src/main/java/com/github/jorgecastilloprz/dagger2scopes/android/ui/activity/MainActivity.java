@@ -23,8 +23,8 @@ import butterknife.InjectView;
 import com.github.jorgecastilloprz.dagger2scopes.R;
 import com.github.jorgecastilloprz.dagger2scopes.android.Dagger2ScopesApp;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.ActivityModule;
-import com.github.jorgecastilloprz.dagger2scopes.android.di.components.DaggerGameListActivityComponent;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.components.GameListActivityComponent;
+import com.github.jorgecastilloprz.dagger2scopes.android.di.components.DaggerGameListActivityComponent;
 
 public class MainActivity extends BaseActivity {
 

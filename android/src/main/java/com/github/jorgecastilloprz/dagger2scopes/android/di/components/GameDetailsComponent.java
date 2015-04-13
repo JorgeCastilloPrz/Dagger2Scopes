@@ -19,7 +19,6 @@ import com.github.jorgecastilloprz.dagger2scopes.android.di.ActivityModule;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.GameDetailsModule;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.scopes.ActivityScope;
 import com.github.jorgecastilloprz.dagger2scopes.android.ui.activity.GameDetailsActivity;
-import com.github.jorgecastilloprz.dagger2scopes.android.ui.animator.ToolbarAnimator;
 import com.github.jorgecastilloprz.dagger2scopes.android.ui.fragment.GameDetailsFragment;
 import com.github.jorgecastilloprz.dagger2scopes.domain.interactors.ChangeBookmarkGameStatus;
 import com.github.jorgecastilloprz.dagger2scopes.presentation.GameDetailsPresenter;

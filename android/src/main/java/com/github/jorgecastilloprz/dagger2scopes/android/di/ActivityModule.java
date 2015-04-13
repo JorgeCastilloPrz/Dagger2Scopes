@@ -18,6 +18,8 @@ package com.github.jorgecastilloprz.dagger2scopes.android.di;
 import android.app.Activity;
 import com.github.jorgecastilloprz.dagger2scopes.android.di.scopes.ActivityScope;
 import com.github.jorgecastilloprz.dagger2scopes.android.navigation.Dagger2ScopesNavigator;
+import com.github.jorgecastilloprz.dagger2scopes.android.ui.animator.ToolbarAnimator;
+import com.github.jorgecastilloprz.dagger2scopes.android.ui.animator.ToolbarAnimatorImpl;
 import com.github.jorgecastilloprz.dagger2scopes.domain.navigation.Navigator;
 import dagger.Module;
 import dagger.Provides;
@@ -41,5 +43,9 @@ import dagger.Provides;
 
   @Provides @ActivityScope Navigator provideNavigator(Dagger2ScopesNavigator navigator) {
     return navigator;
+  }
+
+  @Provides @ActivityScope ToolbarAnimator provideToolbarAnimator(ToolbarAnimatorImpl animator) {
+    return animator;
   }
 }

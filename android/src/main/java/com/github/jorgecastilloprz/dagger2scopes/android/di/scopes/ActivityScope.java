@@ -21,7 +21,6 @@ import javax.inject.Scope;
 
 /**
  * Activity linked dependencies scope. Used to provide dependencies linked to activities lifecycle.
- * Activity context would be able to get injected thanks to this scope.
  *
  * @author Jorge Castillo Pérez
  */

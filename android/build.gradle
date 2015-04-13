@@ -28,10 +28,11 @@ android {
 dependencies {
   compile project(':domain')
   compile project(':presentation')
+  compile project(':repository')
   compile parent.ext.libRecyclerView
   compile parent.ext.libCardView
   compile parent.ext.libButterknife
-  compile 'javax.annotation:jsr250-api:1.0'
+  provided parent.ext.libAnnotations
   provided parent.ext.libDaggerCompiler
   compile parent.ext.libDagger
   compile parent.ext.libAppCompat
