@@ -11,7 +11,7 @@ allprojects {
   ext {
     // Android config
     androidCompileSdkVersion = 21
-    androidBuildToolsVersion = "21.0.2"
+    androidBuildToolsVersion = "21.1.2"
     androidMinSdkVersion = 14
     androidTargetSdkVersion = 21
     androidApplicationId = 'com.github.jorgecastilloprz.dagger2scopes'
