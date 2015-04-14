@@ -13,14 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.jorgecastilloprz.dagger2scopes.domain.model;
+package com.github.jorgecastilloprz.dagger2scopes.repository.datasource;
 
+import com.github.jorgecastilloprz.dagger2scopes.domain.model.Game;
 import java.util.List;
 
 /**
+ * Came DataSource. Data sources implementations are part of the application details and
+ * because of that, they are located into the outer layer. This class is just the entry point to
+ * reach them, and it would be at the same level as the repository. By doing that, repository will
+ * be able to use DataSources without depending on an outer layer, using Inversion of Control
+ * principle.
+ *
  * @author Jorge Castillo Pérez
  */
-public interface GameCatalog {
+public interface GameDataSource {
 
   List<Game> getGames();
 }

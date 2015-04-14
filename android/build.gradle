@@ -29,6 +29,7 @@ dependencies {
   compile project(':domain')
   compile project(':presentation')
   compile project(':repository')
+  compile project(':datasources')
   compile parent.ext.libRecyclerView
   compile parent.ext.libCardView
   compile parent.ext.libButterknife

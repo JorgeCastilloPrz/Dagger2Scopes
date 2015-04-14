@@ -25,7 +25,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.github.jorgecastilloprz.dagger2scopes.R;
 import com.github.jorgecastilloprz.dagger2scopes.domain.model.Game;
-import com.github.jorgecastilloprz.dagger2scopes.domain.model.LucasArtGame;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,7 +75,7 @@ public class GameListAdapter extends RecyclerView.Adapter<GameListAdapter.ViewHo
     if (onItemClickListener != null) {
       new Handler().postDelayed(new Runnable() {
         @Override public void run() {
-          onItemClickListener.onItemClick(v, (LucasArtGame) v.getTag());
+          onItemClickListener.onItemClick(v, (Game) v.getTag());
         }
       }, 200);
     }
@@ -93,6 +92,6 @@ public class GameListAdapter extends RecyclerView.Adapter<GameListAdapter.ViewHo
   }
 
   public interface OnItemClickListener {
-    void onItemClick(View view, LucasArtGame game);
+    void onItemClick(View view, Game game);
   }
 }

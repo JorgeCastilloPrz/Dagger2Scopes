@@ -12,7 +12,6 @@ import com.github.jorgecastilloprz.dagger2scopes.R;
 import com.github.jorgecastilloprz.dagger2scopes.android.ui.activity.MainActivity;
 import com.github.jorgecastilloprz.dagger2scopes.android.ui.adapters.GameListAdapter;
 import com.github.jorgecastilloprz.dagger2scopes.domain.model.Game;
-import com.github.jorgecastilloprz.dagger2scopes.domain.model.LucasArtGame;
 import com.github.jorgecastilloprz.dagger2scopes.presentation.GameListPresenter;
 import com.github.jorgecastilloprz.dagger2scopes.presentation.GameListPresenterImpl;
 import java.io.Serializable;
@@ -80,7 +79,7 @@ public class LucasGameListFragment extends BaseFragment
     gameAdapter.drawGames(games);
   }
 
-  @Override public void onItemClick(View view, LucasArtGame game) {
+  @Override public void onItemClick(View view, Game game) {
     presenter.onGameClicked(game);
   }
 

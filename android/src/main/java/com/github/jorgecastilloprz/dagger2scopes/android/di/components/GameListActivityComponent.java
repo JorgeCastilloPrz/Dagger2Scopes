@@ -21,7 +21,7 @@ import com.github.jorgecastilloprz.dagger2scopes.android.di.scopes.ActivityScope
 import com.github.jorgecastilloprz.dagger2scopes.android.ui.activity.MainActivity;
 import com.github.jorgecastilloprz.dagger2scopes.android.ui.fragment.LucasGameListFragment;
 import com.github.jorgecastilloprz.dagger2scopes.domain.interactors.LoadGames;
-import com.github.jorgecastilloprz.dagger2scopes.domain.model.GameCatalog;
+import com.github.jorgecastilloprz.dagger2scopes.repository.datasource.GameDataSource;
 import com.github.jorgecastilloprz.dagger2scopes.domain.repository.GameRepository;
 import com.github.jorgecastilloprz.dagger2scopes.presentation.GameListPresenter;
 import dagger.Component;
@@ -48,5 +48,5 @@ import dagger.Component;
 
   GameRepository gameRepository();
 
-  GameCatalog gameCatalog();
+  GameDataSource provideDataSource();
 }

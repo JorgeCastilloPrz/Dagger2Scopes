@@ -16,25 +16,26 @@
 package com.github.jorgecastilloprz.dagger2scopes.repository;
 
 import com.github.jorgecastilloprz.dagger2scopes.domain.model.Game;
-import com.github.jorgecastilloprz.dagger2scopes.domain.model.GameCatalog;
 import com.github.jorgecastilloprz.dagger2scopes.domain.repository.GameRepository;
+import com.github.jorgecastilloprz.dagger2scopes.repository.datasource.GameDataSource;
 import java.util.List;
 import javax.inject.Inject;
 
 /**
- * Mock catalog details
+ * Game repository implementation details. DataSources are injected into it using the dependency
+ * injection framework.
  *
  * @author Jorge Castillo Pérez
  */
 public class GameRepositoryImpl implements GameRepository {
 
-  private GameCatalog catalog;
+  private GameDataSource dataSource;
 
-  @Inject GameRepositoryImpl(GameCatalog catalog) {
-    this.catalog = catalog;
+  @Inject GameRepositoryImpl(GameDataSource dataSource) {
+    this.dataSource = dataSource;
   }
 
   @Override public List<Game> getGames() {
-    return catalog.getGames();
+    return dataSource.getGames();
   }
 }
