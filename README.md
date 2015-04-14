@@ -41,10 +41,8 @@ This sample is modeled using the [Uncle Bob's Clean Arquitecture approach][clean
  Every layer has his very own entity mapper to provide the inner layer inmediately next to it with the entity forms most adequated to it. This is done by
  that way to not violate de dependency rules. That is mentioned by **Uncle Bob**:
 
- ```
- "...That would violate The Dependency Rule because it would force an inner circle to know something about an outer circle. So when we pass data across a
- boundary, it is always in the form that is most convenient for the inner circle."
- ```
+*"...That would violate The Dependency Rule because it would force an inner circle to know something about an outer circle. So when we pass data across
+a boundary, it is always in the form that is most convenient for the inner circle."*
 
 
 Attributions
