@@ -21,6 +21,23 @@ linked to activity lifecycle, like `Navigator` or `ToolbarAnimator`.
 
 All the activity scoped components are sharing the custom `@ActivityScope`.
 
+Clean
+-----
+This sample is modeled using the [Uncle Bob's Clean Arquitecture approach][clean-arquitecture-post]. To reach the main goals of **Clean**, i am including the
+ following modules:
+
+ * `android`: This one contains the ui graphics and platform implementations for some dependencies defined in the domain layer, like the `Navigator`.
+ Dependency injection is defined here too.
+ * `presentation (java)`: Presentation logic for the application is held here. It is the layer used to uncouple the graphic view details from the model and the
+ classes which work with it.
+ * `domain (java)`: The business logic is here. You will find too the use cases (interactors), threading logic, and some boundaries defined by interfaces to implement in other
+ modules, like the `Navigator` or the `GameRepository`.
+ * `repository (java)`: Implementations for the repository would be here.
+
+ Every dependency is provided by the dependency injection framework (Dagger2) which maximizes the power of **Inversion of Control** principle. By this way,
+ the dependencies **always** point from the outer layers to the inner ones. There aren't any inner layer classes depending on outer ones.
+
+
 Attributions
 ------------
 * Dagger 2 component and module structure based on [Dagger 2 Google Samples][dagger2-samples].
@@ -54,3 +71,4 @@ License
 [dagger2-samples]: https://github.com/google/dagger
 [fernando-cejas-blogentry]: http://fernandocejas.com/2015/04/11/tasting-dagger-2-on-android/
 [fernando-cejas-github]: https://github.com/android10
+[clean-arquitecture-post]: http://blog.8thlight.com/uncle-bob/2012/08/13/the-clean-architecture.html
