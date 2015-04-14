@@ -35,11 +35,11 @@ This sample is modeled using the [Uncle Bob's Clean Arquitecture approach][clean
  * **repository** (java): My implementation for the repository is defined here.
  * **datasources** (java): Data source implementations.
 
- Every dependency is provided by the dependency injection framework which maximizes the power of **Inversion of Control** principle. By this way,
- the dependencies **always** point from the outer layers to the inner ones. There aren't any inner layer classes depending on outer ones.
+Every dependency is provided by the dependency injection framework which maximizes the power of **Inversion of Control** principle. By this way,
+the dependencies **always** point from the outer layers to the inner ones. There aren't any inner layer classes depending on outer ones.
 
- Every layer has his very own entity mapper to provide the inner layer inmediately next to it with the entity forms most adequated to it. This is done by
- that way to not violate de dependency rules. That is mentioned by **Uncle Bob**:
+Every layer has his very own entity mapper to provide the inner layer inmediately next to it with the entity forms most adequated to it. This is done by
+that way to not violate de dependency rules. That is mentioned by **Uncle Bob**:
 
 *"...That would violate The Dependency Rule because it would force an inner circle to know something about an outer circle. So when we pass data across
 a boundary, it is always in the form that is most convenient for the inner circle."*
