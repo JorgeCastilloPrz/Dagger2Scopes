@@ -9,8 +9,8 @@ the following features:
 * An approach to Clean Architecture.
 * An approach to MVP pattern.
 
-DI structure
-------------
+Dependency Injection
+--------------------
 Dagger 2 erases the dagger 1 graph concept by introducing the brand new components. The components available in this sample app are the following:
 * `ApplicationComponent`: This component will be used to expose application context and generic dependencies to components depending on this one or
 to child components. This component will be used to inject `Dagger2ScopesApp` and activities/fragments by component composition.
@@ -26,15 +26,15 @@ Clean
 This sample is modeled using the [Uncle Bob's Clean Arquitecture approach][clean-arquitecture-post]. To reach the main goals of **Clean**, i am including the
  following modules:
 
- * `android`: This one contains the ui graphics and platform implementations for some dependencies defined in the domain layer, like the `Navigator`.
+ * **android**: This one contains the ui graphics and platform implementations for some dependencies defined in the domain layer, like the `Navigator`.
  Dependency injection is defined here too.
- * `presentation (java)`: Presentation logic for the application is held here. It is the layer used to uncouple the graphic view details from the model and the
+ * **presentation** (java): Presentation logic for the application is held here. It is the layer used to decouple the graphic view details from the model and the
  classes which work with it.
- * `domain (java)`: The business logic is here. You will find too the use cases (interactors), threading logic, and some boundaries defined by interfaces to implement in other
+ * **domain** (java): The business logic of the app. Here, you will also find the use cases (interactors), threading logic, and some boundaries defined by interfaces to implement in other
  modules, like the `Navigator` or the `GameRepository`.
- * `repository (java)`: Implementations for the repository would be here.
+ * **repository** (java): My implementation for the repository is defined here.
 
- Every dependency is provided by the dependency injection framework (Dagger2) which maximizes the power of **Inversion of Control** principle. By this way,
+ Every dependency is provided by the dependency injection framework which maximizes the power of **Inversion of Control** principle. By this way,
  the dependencies **always** point from the outer layers to the inner ones. There aren't any inner layer classes depending on outer ones.
 
 
