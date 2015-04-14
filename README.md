@@ -42,6 +42,7 @@ Attributions
 ------------
 * Dagger 2 component and module structure based on [Dagger 2 Google Samples][dagger2-samples].
 * Project inspired by this [blog entry][fernando-cejas-blogentry] from [@android10][fernando-cejas-github].
+* Clean arquitecture composition inspired by [Clean-Contacts][panavtec-clean-contacts] project by [@PaNaVTEC][panavtec-github].
 
 Developed By
 ------------
@@ -72,3 +73,5 @@ License
 [fernando-cejas-blogentry]: http://fernandocejas.com/2015/04/11/tasting-dagger-2-on-android/
 [fernando-cejas-github]: https://github.com/android10
 [clean-arquitecture-post]: http://blog.8thlight.com/uncle-bob/2012/08/13/the-clean-architecture.html
+[panavtec-github]: https://github.com/PaNaVTEC
+[panavtec-clean-contacts]: https://github.com/PaNaVTEC/Clean-Contacts
