@@ -100,7 +100,7 @@ public class GameDetailsActivity extends BaseActivity
   }
 
   @TargetApi(Build.VERSION_CODES.LOLLIPOP) private void excludeItemsFromTransitionIfLollipop() {
-    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
       Slide transition = new Slide();
       transition.excludeTarget(android.R.id.statusBarBackground, true);
       transition.excludeTarget(R.id.toolbar, true);
